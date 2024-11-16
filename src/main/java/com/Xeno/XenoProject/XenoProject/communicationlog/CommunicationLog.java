@@ -1,13 +1,8 @@
 package com.Xeno.XenoProject.XenoProject.communicationlog;
 
-import com.Xeno.XenoProject.XenoProject.customer.Customer; // Import Customer entity
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.Xeno.XenoProject.XenoProject.Campaign.Campaign;
+import com.Xeno.XenoProject.XenoProject.customer.Customer;
+import jakarta.persistence.*;
 
 @Entity
 public class CommunicationLog {
@@ -16,10 +11,14 @@ public class CommunicationLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer; 
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "campaign_id", nullable = false)
+    private Campaign campaign;
+    
     private String message;
 
     @Column(nullable = false)
@@ -27,12 +26,14 @@ public class CommunicationLog {
     
     public CommunicationLog() { }
 
-    public CommunicationLog(Customer customer, String message, String status) {
+    public CommunicationLog(Customer customer, Campaign campaign, String message, String status) {
         this.customer = customer;
+        this.campaign = campaign;
         this.message = message;
         this.status = status;
     }
-
+    
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -47,6 +48,14 @@ public class CommunicationLog {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Campaign getCampaign() {
+        return campaign;
+    }
+
+    public void setCampaign(Campaign campaign) {
+        this.campaign = campaign;
     }
 
     public String getMessage() {
@@ -67,6 +76,7 @@ public class CommunicationLog {
 
     @Override
     public String toString() {
-        return "CommunicationLog [id=" + id + ", customer=" + customer + ", message=" + message + ", status=" + status + "]";
+        return "CommunicationLog [id=" + id + ", customer=" + customer + ", campaign=" + campaign + 
+                ", message=" + message + ", status=" + status + "]";
     }
 }
