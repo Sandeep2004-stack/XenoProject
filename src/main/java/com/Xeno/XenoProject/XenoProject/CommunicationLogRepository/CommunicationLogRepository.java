@@ -15,6 +15,8 @@ public interface CommunicationLogRepository extends JpaRepository<CommunicationL
 
     // Count logs by campaign ID and status
     int countByCampaign_IdAndStatus(Long campaignId, String status);
+    List<CommunicationLog> findByCustomerIdAndCampaignId(Long customerId, Long campaignId);
+
 }
 
 
