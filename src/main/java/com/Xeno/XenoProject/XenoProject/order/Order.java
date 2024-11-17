@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -26,46 +28,42 @@ public class Order {
 
     private Double orderAmount;
     private Date orderDate;
-    public Order(){
-    	
-    }
-    
-	public Order(Customer customer, Double orderAmount, Date orderDate) {
-		super();
-		this.customer = customer;
-		this.orderAmount = orderAmount;
-		this.orderDate = orderDate;
-	}
 
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", customer=" + customer + ", orderAmount=" + orderAmount + ", orderDate="
 				+ orderDate + "]";
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public Customer getCustomer() {
 		return customer;
 	}
+
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
 	public Double getOrderAmount() {
 		return orderAmount;
 	}
+
 	public void setOrderAmount(Double orderAmount) {
 		this.orderAmount = orderAmount;
 	}
+
 	public Date getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
 	}
-
-    // Getters and Setters
 }
