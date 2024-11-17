@@ -1,10 +1,7 @@
-package com.Xeno.XenoProject.XenoProject.Campaign;
+package com.Xeno.XenoProject.Entity;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import com.Xeno.XenoProject.XenoProject.communicationlog.CommunicationLog;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

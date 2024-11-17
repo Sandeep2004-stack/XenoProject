@@ -1,4 +1,4 @@
-package com.Xeno.XenoProject.XenoProject.CampaignService;
+package com.Xeno.XenoProject.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -8,9 +8,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Xeno.XenoProject.XenoProject.Campaign.Campaign;
-import com.Xeno.XenoProject.XenoProject.CampaignRepository.CampaignRepository;
-import com.Xeno.XenoProject.XenoProject.CommunicationLogRepository.CommunicationLogRepository;
+import com.Xeno.XenoProject.Entity.Campaign;
+import com.Xeno.XenoProject.Repository.CampaignRepository;
+import com.Xeno.XenoProject.Repository.CommunicationLogRepository;
+
 
 @Service
 public class CampaignService {

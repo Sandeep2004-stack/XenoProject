@@ -1,12 +1,12 @@
-package com.Xeno.XenoProject.XenoProject.CommunicationLogService;
+package com.Xeno.XenoProject.Service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Xeno.XenoProject.XenoProject.CommunicationLogRepository.CommunicationLogRepository;
-import com.Xeno.XenoProject.XenoProject.communicationlog.CommunicationLog;
+import com.Xeno.XenoProject.Entity.CommunicationLog;
+import com.Xeno.XenoProject.Repository.CommunicationLogRepository;
 
 @Service
 public class CommunicationLogService {
@@ -33,4 +33,5 @@ public class CommunicationLogService {
         }
     }
 }
+
 

@@ -1,17 +1,20 @@
-package com.Xeno.XenoProject.XenoProject.DeleveryRecieptController;
+package com.Xeno.XenoProject.Controller;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Xeno.XenoProject.XenoProject.CommunicationLogRepository.CommunicationLogRepository;
-import com.Xeno.XenoProject.XenoProject.communicationlog.CommunicationLog;
+import com.Xeno.XenoProject.Entity.CommunicationLog;
+import com.Xeno.XenoProject.Repository.CommunicationLogRepository;
+
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/delivery-receipt")
 public class DeliveryReceiptController {
 

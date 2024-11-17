@@ -1,4 +1,4 @@
-package com.Xeno.XenoProject.XenoProject;
+package com.Xeno.XenoProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

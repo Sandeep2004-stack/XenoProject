@@ -1,11 +1,12 @@
-package com.Xeno.XenoProject.XenoProject.CustomerService;
+package com.Xeno.XenoProject.Service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Xeno.XenoProject.XenoProject.CustomerRepository.CustomerRepository;
-import com.Xeno.XenoProject.XenoProject.customer.Customer;
+import com.Xeno.XenoProject.Entity.Customer;
+import com.Xeno.XenoProject.Repository.CustomerRepository;
+
 
 @Service
 public class CustomerService {

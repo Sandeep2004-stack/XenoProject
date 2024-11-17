@@ -1,9 +1,8 @@
-package com.Xeno.XenoProject.XenoProject.DeleveryRecieptService;
+package com.Xeno.XenoProject.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Xeno.XenoProject.XenoProject.CommunicationLogService.CommunicationLogService;
 
 @Service
 public class DeliveryReceiptService {

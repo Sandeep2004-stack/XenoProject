@@ -1,12 +1,13 @@
-package com.Xeno.XenoProject.XenoProject.OrderService;
+package com.Xeno.XenoProject.Service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Xeno.XenoProject.XenoProject.OrderRepository.OrderRepository;
-import com.Xeno.XenoProject.XenoProject.order.Order;
+import com.Xeno.XenoProject.Entity.Order;
+import com.Xeno.XenoProject.Repository.OrderRepository;
+
 
 @Service
 public class OrderService {
