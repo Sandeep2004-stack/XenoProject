@@ -11,6 +11,7 @@ import com.Xeno.XenoProject.XenoProject.customer.Customer;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class CustomerController {
 
