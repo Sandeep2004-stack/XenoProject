@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.Xeno.XenoProject.XenoProject.CustomerRepository.CustomerRepository;
+import com.Xeno.XenoProject.XenoProject.CustomerService.CustomerService;
 import com.Xeno.XenoProject.XenoProject.customer.Customer;
 
 import java.util.List;
@@ -17,19 +18,26 @@ public class CustomerController {
 
     @Autowired
     private CustomerRepository customerRepository;
+    
+    @Autowired
+    private CustomerService customerService;
 
     @PostMapping("/customer")
     public Customer addCustomer(@RequestBody Customer customer) {
-    	System.out.print(customer);
-    	
           return customerRepository.save(customer);
     }
 
     @GetMapping("/customer")
     public ResponseEntity<List<Customer>> getCustomers() {
     	List<Customer> customers = customerRepository.findAll();
-        System.out.println(customers);
-        
         return new ResponseEntity<>(customers, HttpStatus.OK);
+    }
+    
+    @GetMapping("/customer/filter")
+    public ResponseEntity<List<Customer>> getCustomerByCondition(@RequestParam String condition, @RequestParam Double totalSpends ) {
+    	Double value = (double) totalSpends;
+    	System.out.println(condition);
+    	List<Customer> customers = customerService.getCustomerByCondition(condition, value);   
+    	 return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 }
